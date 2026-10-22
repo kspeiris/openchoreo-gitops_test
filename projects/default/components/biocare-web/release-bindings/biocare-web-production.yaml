@@ -1,0 +1,11 @@
+apiVersion: openchoreo.dev/v1alpha1
+kind: ReleaseBinding
+metadata:
+  name: biocare-web-production
+  namespace: default
+spec:
+  environment: production
+  owner:
+    componentName: biocare-web
+    projectName: default
+  releaseName: biocare-web-68898ff579
