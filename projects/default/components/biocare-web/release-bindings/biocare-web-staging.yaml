@@ -6,10 +6,10 @@ metadata:
 spec:
   componentTypeEnvironmentConfigs:
     imagePullPolicy: IfNotPresent
-    replicas: 5
+    replicas: 10
     resources:
       limits:
-        cpu: 150m
+        cpu: 120m
         memory: 256Mi
       requests:
         cpu: 100m
