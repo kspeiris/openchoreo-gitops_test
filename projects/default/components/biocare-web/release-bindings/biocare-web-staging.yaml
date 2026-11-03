@@ -11,10 +11,10 @@ spec:
   releaseName: biocare-web-68898ff579
   componentTypeEnvironmentConfigs:
     imagePullPolicy: IfNotPresent
-    replicas: 1
+    replicas: 3
     resources:
       limits:
-        cpu: 120m
+        cpu: 150m
         memory: 256Mi
       requests:
         cpu: 100m
