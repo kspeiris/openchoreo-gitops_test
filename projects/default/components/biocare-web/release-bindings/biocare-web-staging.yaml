@@ -9,3 +9,18 @@ spec:
     componentName: biocare-web
     projectName: default
   releaseName: biocare-web-68898ff579
+  componentTypeEnvironmentConfigs:
+    imagePullPolicy: IfNotPresent
+    replicas: 4
+    resources:
+      limits:
+        cpu: 100m
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  traitEnvironmentConfigs: {}
+  workloadOverrides:
+    container:
+      env: []
+      files: []
