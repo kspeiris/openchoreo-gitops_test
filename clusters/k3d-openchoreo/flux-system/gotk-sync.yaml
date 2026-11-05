@@ -1,0 +1,35 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: openchoreo-gitops
+  namespace: flux-system
+spec:
+  interval: 1m
+  ref:
+    branch: main
+  url: https://github.com/kspeiris/openchoreo-gitops_test
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: openchoreo-gitops
+  namespace: flux-system
+spec:
+  interval: 1m
+  retryInterval: 1m
+  timeout: 5m
+  path: ./
+  prune: false
+  sourceRef:
+    kind: GitRepository
+    name: openchoreo-gitops
+  serviceAccountName: openchoreo-gitops
+  healthChecks:
+    - apiVersion: openchoreo.dev/v1alpha1
+      kind: ReleaseBinding
+      name: biocare-web-staging
+      namespace: default
+    - apiVersion: openchoreo.dev/v1alpha1
+      kind: ReleaseBinding
+      name: biocare-web-production
+      namespace: default
