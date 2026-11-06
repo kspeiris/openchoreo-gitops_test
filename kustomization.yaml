@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - clusters/k3d-openchoreo/flux-system/gotk-sync.yaml
+  - namespaces/default/platform/infra/deployment-pipelines/default.yaml
+  - projects/default/project.yaml
+  - projects/default/components/biocare-web/releases/biocare-web-68898ff579.yaml
+  - projects/default/components/biocare-web/release-bindings/biocare-web-production.yaml
+  - projects/default/components/biocare-web/release-bindings/biocare-web-staging.yaml
