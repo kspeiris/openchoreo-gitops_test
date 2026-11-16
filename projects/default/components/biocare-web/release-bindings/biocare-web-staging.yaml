@@ -22,5 +22,7 @@ spec:
   traitEnvironmentConfigs: {}
   workloadOverrides:
     container:
-      env: []
+      env:
+        - key: DB
+          value: "21983494"
       files: []
